@@ -1,14 +1,14 @@
 # workoutlog
-Please find screenshots of testing for all appropriate routes on the server side of WOL:
-Create User
-Login
-Create Log
-Update Log
-Search all logs for user
-Search specific logs
-Delete Log
+Please find screenshots of testing for all appropriate routes on the server side of WOL: </br>
+Create User </br>
+Login </br>
+Create Log </br>
+Update Log </br>
+Search all logs for user </br>
+Search specific logs </br>
+Delete Log </br>
 
-All screenshots:
+All screenshots: </br>
 ![1](assets/createLog.jpg)</br>
 ![2](assets/deleteLog.jpg)</br>
 ![3](assets/deleteLogPG.jpg)</br>
