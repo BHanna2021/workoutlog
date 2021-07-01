@@ -9,7 +9,7 @@ const validateJWT = async(req, res, next) => {
         req.headers.authorization.includes("Bearer")
     ) {
         const { authorization } = req.headers;
-        // console.log("authorization -->", authorization);
+        console.log("authorization -->", authorization);
         const payload = authorization ?
             jwt.verify(
                 authorization.includes("Bearer") ?
@@ -19,11 +19,11 @@ const validateJWT = async(req, res, next) => {
             ) :
             undefined;
 
-        // console.log("payload -->", payload);
-
+        console.log("payload -->", payload);
+        console.log(UserModel);
         if (payload) {
             let foundUser = await UserModel.findOne({ where: { id: payload.id } });
-            // console.log("foundUser -->", foundUser);
+            console.log("foundUser -->", foundUser);
             if (foundUser) {
                 // console.log("request -->", req);
                 req.user = foundUser;

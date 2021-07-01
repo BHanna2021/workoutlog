@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const { JsonWebTokenError } = require("jsonwebtoken");
-const validateJWT = require("../../../ElevenJournal/server/middleware/validate-jwt");
+const validateJWT = require("../middleware/validate-jwt");
 const { LogModel } = require("../models");
 const Log = require("../models/log");
 
 router.post("/", validateJWT, async(req, res) => {
+    console.log("Hi Mom!")
     const { description, definition, result } = req.body.Log;
     const { id } = req.user;
     const logEntry = {
@@ -13,6 +14,7 @@ router.post("/", validateJWT, async(req, res) => {
         result,
         owner_id: id
     }
+    console.log(req.body.Log, req.user)
     try {
         const newLog = await LogModel.create(logEntry);
         res.status(200).json(newLog);
